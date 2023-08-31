@@ -272,7 +272,7 @@ public class Principal {
         
 		
 		
-		System.out.println("-----------------------------------1----");
+		System.out.println("---------------------------------------");
 		System.out.println("|               POKEMON               |");
 		System.out.println("|                                     |");
 		System.out.println("|                                     |");
@@ -328,6 +328,10 @@ public class Principal {
                     int speed = MyIO.readInt("Velocidade do pokemon: ");
 
                     Pokemon pokemon = new Pokemon(codPokedex, nome, tipo, hp, attack, speed);
+                    
+                    System.out.println("INSERT INTO pokemon(codPokedex, nome, tipo, hp, attack, speed) "
+ 					       + "VALUES("+pokemon.getCodPokedex() + ", '" + pokemon.getNome() + "', '"  
+ 					       + pokemon.getTipo() + "', " + pokemon.getHp() + ", " + pokemon.getAttack() + ", " + pokemon.getSpeed() + ");");
 
                     if (dao.inserirPokemon(pokemon) == true)
                     {

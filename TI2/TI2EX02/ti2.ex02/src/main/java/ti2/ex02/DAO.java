@@ -19,11 +19,11 @@ public class DAO {
 	public boolean conectar() {
 		String driverName = "org.postgresql.Driver";                    
 		String serverName = "localhost";
-		String mydatabase = "TI2EX02";
+		String mydatabase = "TI02EX02";
 		int porta = 5432;
-		String url = "jdbc:postgresql://" + serverName + ":" + porta +"/" + mydatabase;
-		String username = "ti2cc";
-		String password = "ti@cc";
+		String url = "jdbc:postgresql://" + serverName + ":" + porta + "/" + mydatabase;
+		String username = "postgres";
+		String password = "gabriel05";
 		boolean status = false;
 
 		try {
@@ -56,9 +56,9 @@ public class DAO {
 		boolean status = false;
 		try {  
 			Statement st = conexao.createStatement();
-			st.executeUpdate("INSERT INTO pokemon (codPokedex, nome,  tipo, hp, attack, speed) "
-					       + "VALUES ("+pokemon.getCodPokedex() + ", '" + pokemon.getNome() + "', '"  
-					       + pokemon.getTipo() + "', '" + pokemon.getHp() + ", '" + pokemon.getAttack() + ", '" + pokemon.getSpeed() + "');");
+			st.executeUpdate("INSERT INTO pokemon(codPokedex, nome, tipo, hp, attack, speed) "
+				       + "VALUES("+pokemon.getCodPokedex() + ", '" + pokemon.getNome() + "', '"  
+				       + pokemon.getTipo() + "', " + pokemon.getHp() + ", " + pokemon.getAttack() + ", " + pokemon.getSpeed() + ");");
 			st.close();
 			status = true;
 		} catch (SQLException u) {  
