@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="stylenav.css">
+    <title>Pokemon Novo</title>
+</head>
+
+<script type="text/javascript">
+
+    function addIdToPath(form_name, base_url){
+        var your_form = document.getElementById(form_name);
+        var id = your_form.elements.namedItem("codpokedex").value;
+        action_src = base_url + id;
+        your_form.action = action_src;
+    }
+    
+    function addParamtoPath(form_name, base_url){
+        var your_form = document.getElementsByClassName("input--register")
+    }
+</script>
+
+<body>
+    <nav class="main-navigation">
+        <div class="navbar-header animated fadeInUp">
+            <a class="navbar-brand" href="#"><img style="max-height: 100%;"
+                src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png"
+                alt="Logo Pokemon"></a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-list-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="form.html" class="nav-link">New Pokemon</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div clss="formSeguro" id="formPontoPerigoso">
+        <h1>Novo Pokemon</h1>
+
+         <form class="form--register" action="http://localhost:6789/Pokemon/insert" method="post" id="form-add">
+
+            <div class="inputBox">
+            <input class="input--register" type="text" name="Nome" required><label class="labelPonto"
+                for="Nome">Nome:</label>
+            </div>
+
+            <div class="inputBox">
+            <input class="input--register" type="number" name="codPokedex" required><label class="labelPonto"
+                for="codPokedex">codPokedex:</label>
+            </div>
+
+            <div class="inputBox">
+            <input class="input--register" type="text" name="Tipo" required><label class="labelPonto"
+                for="Tipo">Tipo:</label>
+            </div>
+
+            <div class="inputBox">
+            <input class="input--register" type="number" id="campoHp" name="Hp" required><label class="labelPonto"
+                for="Hp">Hp:</label>
+            </div>
+
+            <div class="inputBox">
+            <input class="input--register" type="number" id="campoAttack" name="Attack" required><label class="labelPonto"
+                for="Attack">Attack:</label>
+             </div>
+
+            <div class="inputBox">
+            <input class="input--register" type="number" id="campoSpeed" name="Speed" required><label class="labelPonto"
+                for="Speed">Speed:</label>
+            </div>
+            <input type="submit" value="cadastrar" class="input--main__style input--button">
+        </form>
+        <!--
+        <div class="inputBox">
+            <textarea class="formPontog" rows="2" cols="30" id="campoMore" name="campoMore" required></textarea><label class="labelTA"
+                for="campoMore">Informações do ocorrido:</label>
+        </div>
+        
+        
+        <div class="combinacao">
+            <input type="radio" id="ponto" name="tipoPonto" checked><label for="ponto">Ponto de Ônibus</label>
+        </div>
+
+        <div class="combinacao">
+            <input type="radio" id="local" name="tipoPonto"><label for="local">Local de espera</label>
+        </div>
+        -->
+
+      <div id="enviado"></div>
+      <p></p>
+
+    </div>
+
+
+
+</body>
+
+</html>
